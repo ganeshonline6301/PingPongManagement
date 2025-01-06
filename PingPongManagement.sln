@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongManagement.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongManagement.Infrastructure", "src\PingPongManagement.Infrastructure\PingPongManagement.Infrastructure.csproj", "{1C3BB8CB-EF6E-44DA-8809-B8B09647AA16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongManagement.Contracts", "src\PingPongManagement.Contracts\PingPongManagement.Contracts.csproj", "{BE69B686-1676-4E9A-B78A-0AF48A605424}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +40,16 @@ Global
 		{1C3BB8CB-EF6E-44DA-8809-B8B09647AA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3BB8CB-EF6E-44DA-8809-B8B09647AA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3BB8CB-EF6E-44DA-8809-B8B09647AA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE69B686-1676-4E9A-B78A-0AF48A605424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE69B686-1676-4E9A-B78A-0AF48A605424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE69B686-1676-4E9A-B78A-0AF48A605424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE69B686-1676-4E9A-B78A-0AF48A605424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D5E251F6-A957-407C-88AD-8C55DA532496} = {71AC86DD-E467-4481-8A12-D5991CFC82EB}
 		{94ED1EB3-CF6B-43C1-B192-FB906A3AC69E} = {71AC86DD-E467-4481-8A12-D5991CFC82EB}
 		{E5E8E137-DB6E-46B4-BC86-7CE4C7834093} = {71AC86DD-E467-4481-8A12-D5991CFC82EB}
 		{1C3BB8CB-EF6E-44DA-8809-B8B09647AA16} = {71AC86DD-E467-4481-8A12-D5991CFC82EB}
+		{BE69B686-1676-4E9A-B78A-0AF48A605424} = {71AC86DD-E467-4481-8A12-D5991CFC82EB}
 	EndGlobalSection
 EndGlobal
