@@ -2,8 +2,18 @@
 
 public class Tournament
 {
-    public Guid Id { get; set; }
-    public string Title { get; set; }
-    public TournamentType Type { get; set; }
-    public string Description { get; set; }
+    public Guid Id { get; }
+    public string Title { get; }
+    public TournamentType Type { get; }
+    public string Description { get; }
+    public Guid AdminId { get; }
+
+    public Tournament(string title, string description, TournamentType type, Guid adminId, Guid? id = null)
+    {
+        Type = type;
+        Title = title;
+        Description = description;
+        AdminId = adminId;
+        Id = id ?? Guid.NewGuid();
+    }
 }
