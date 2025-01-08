@@ -1,6 +1,3 @@
 ﻿namespace PingPongManagement.Contracts.Tournaments;
 
-public class TournamentResponse
-{
-    
-}
+public record TournamentResponse(Guid Id, string Title, string Description);

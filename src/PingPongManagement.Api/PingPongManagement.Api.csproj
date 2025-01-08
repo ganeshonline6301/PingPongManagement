@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PingPongManagement.Contracts\PingPongManagement.Contracts.csproj" />
+    <ProjectReference Include="..\PingPongManagement.Application\PingPongManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>
