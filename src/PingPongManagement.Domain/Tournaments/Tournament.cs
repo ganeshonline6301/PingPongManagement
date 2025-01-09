@@ -1,7 +1,13 @@
-﻿namespace PingPongManagement.Domain.Tournaments;
+﻿using ErrorOr;
+using PingPongManagement.Domain.Matches;
+using Throw;
+
+namespace PingPongManagement.Domain.Tournaments;
 
 public class Tournament
 {
+    private readonly List<Guid> _matchIds = new();
+    private readonly int _maxMatches;
     public Guid Id { get; }
     public string Title { get; }
     public TournamentType Type { get; }
@@ -15,5 +21,24 @@ public class Tournament
         Description = description;
         AdminId = adminId;
         Id = id ?? Guid.NewGuid();
+    }
+
+    public ErrorOr<Success> AddMatch(Match match)
+    {
+        _matchIds.Throw().IfContains(match.Id);
+
+        if (_matchIds.Count == 48)
+        {
+            return TournamentErrors.CannotIncludeMoreMatchesThanTheTournamentAllows;
+        }
+        
+        _matchIds.Add(match.Id);
+
+        return Result.Success;
+    }
+    
+    public bool HasMatch(Guid gymId)
+    {
+        return _matchIds.Contains(gymId);
     }
 }
