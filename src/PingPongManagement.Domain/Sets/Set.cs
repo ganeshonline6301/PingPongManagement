@@ -1,4 +1,5 @@
-﻿using PingPongManagement.Domain.Admins;
+﻿using ErrorOr;
+using PingPongManagement.Domain.Admins;
 
 namespace PingPongManagement.Domain.Sets;
 
@@ -25,17 +26,19 @@ public class Set
         
     }
     
-    public void RecordScores(int player1Score, int player2Score)
+    public ErrorOr<Success> RecordScores(int player1Score, int player2Score)
     {
         if (player1Score == player2Score)
         {
-            throw new InvalidOperationException("Scores cannot be equal. There must be a winner.");
+            return SetErrors.InvalidScores;
         }
 
         Player1Score = player1Score;
         Player2Score = player2Score;
 
         DetermineWinner();
+
+        return Result.Success;
     }
     
     private void DetermineWinner()
