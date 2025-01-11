@@ -6,4 +6,5 @@ public class Match
     public string Name { get; set; }
     public MatchType MatchType { get; set; }
     public Guid TournamentId { get; set; }
+    public Guid WinnerId { get; set; }
 }

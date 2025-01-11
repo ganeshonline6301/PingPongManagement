@@ -11,6 +11,7 @@ public class Tournament
     public Guid Id { get; }
     public string Title { get; }
     public TournamentType Type { get; }
+    public TournamentStatus Status { get; }
     public string Description { get; }
     public Guid AdminId { get; }
 
