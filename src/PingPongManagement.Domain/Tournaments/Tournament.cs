@@ -14,6 +14,8 @@ public class Tournament
     public TournamentStatus Status { get; }
     public string Description { get; }
     public Guid AdminId { get; }
+    
+    public IReadOnlyCollection<Guid> Matches => _matchIds.AsReadOnly();
 
     public Tournament(string title, string description, TournamentType type, Guid adminId, Guid? id = null)
     {
@@ -24,13 +26,18 @@ public class Tournament
         Id = id ?? Guid.NewGuid();
     }
 
-    public ErrorOr<Success> AddMatch(Match match)
+    public ErrorOr<Success> AddMatch(Match match, Guid player1Id, Guid player2Id)
     {
         _matchIds.Throw().IfContains(match.Id);
 
         if (_matchIds.Count == 48)
         {
             return TournamentErrors.CannotIncludeMoreMatchesThanTheTournamentAllows;
+        }
+
+        if (player1Id.Equals(AdminId) || player2Id.Equals(AdminId))
+        {
+            return TournamentErrors.TournamentOwnerCannotbeParticipate;
         }
         
         _matchIds.Add(match.Id);
