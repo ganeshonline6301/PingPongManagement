@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using PingPongManagement.Domain.Admins;
 using PingPongManagement.Domain.Matches;
 using PingPongManagement.Domain.Sets;
@@ -15,5 +16,12 @@ public class PingPongManagementDbContext : DbContext
 
     public PingPongManagementDbContext(DbContextOptions<PingPongManagementDbContext> options) : base(options)
     {
+    }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        base.OnModelCreating(modelBuilder);
     }
 }

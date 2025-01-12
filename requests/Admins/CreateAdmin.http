@@ -1,0 +1,11 @@
+﻿@host=http://localhost:5216
+
+POST {{host}}/api/Admin
+Content-Type: application/json
+
+{
+    "FirstName": "Ganesh",
+    "LastName": "Penke",
+    "Email": "gpenke@email.com",
+    "UserName": "gpenke"
+}

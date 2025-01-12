@@ -8,12 +8,12 @@ public class Tournament
 {
     private readonly List<Guid> _matchIds = new();
     private readonly int _maxMatches;
-    public Guid Id { get; }
-    public string Title { get; }
-    public TournamentType Type { get; }
-    public TournamentStatus Status { get; }
-    public string Description { get; }
-    public Guid AdminId { get; }
+    public Guid Id { get; private set; }
+    public string Title { get; private set; }
+    public TournamentType Type { get; private set; }
+    public TournamentStatus Status { get; private set; }
+    public string Description { get; private set; }
+    public Guid AdminId { get; private set; }
     
     public IReadOnlyCollection<Guid> Matches => _matchIds.AsReadOnly();
 
@@ -24,6 +24,11 @@ public class Tournament
         Description = description;
         AdminId = adminId;
         Id = id ?? Guid.NewGuid();
+    }
+
+    private Tournament()
+    {
+        
     }
 
     public ErrorOr<Success> AddMatch(Match match, Guid player1Id, Guid player2Id)
