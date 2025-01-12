@@ -13,5 +13,10 @@ public class MatchConfigurations : IEntityTypeConfiguration<Match>
             .HasConversion(
                 matchType => matchType.Value,
                 value => MatchType.FromValue(value));
+        
+        builder.Property(m => m.Status)
+            .HasConversion(
+                status => status.Value,
+                value => MatchStatus.FromValue(value));
     }
 }
