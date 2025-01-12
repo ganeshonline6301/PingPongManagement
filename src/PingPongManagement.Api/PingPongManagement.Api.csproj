@@ -8,12 +8,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PingPongManagement.Contracts\PingPongManagement.Contracts.csproj" />
     <ProjectReference Include="..\PingPongManagement.Application\PingPongManagement.Application.csproj" />
+    <ProjectReference Include="..\PingPongManagement.Infrastructure\PingPongManagement.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
