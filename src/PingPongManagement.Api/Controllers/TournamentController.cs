@@ -43,7 +43,10 @@ namespace PingPongManagement.Api.Controllers
         public async Task<TournamentResponse> CreateTournament(CreateTournamentRequest createTournamentRequest,
             CancellationToken cancellationToken)
         {
-            return new TournamentResponse(Guid.NewGuid(), createTournamentRequest.Title, createTournamentRequest.Description);
+            return new TournamentResponse(
+                Guid.NewGuid(), 
+                createTournamentRequest.Title, 
+                createTournamentRequest.Description);
         }
 
         [HttpDelete]

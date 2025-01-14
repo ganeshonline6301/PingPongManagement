@@ -3,7 +3,7 @@ using PingPongManagement.Domain.Tournaments;
 
 namespace PingPongManagement.Infrastructure.Tournaments.Persistence;
 
-public class TournamentRepository : ITournamentRepository
+internal class TournamentRepository : ITournamentRepository
 {
     public Task<IEnumerable<Tournament>> GetAllAsync(CancellationToken cancellationToken)
     {

@@ -1,6 +1,6 @@
 ﻿namespace PingPongManagement.Infrastructure.Sets.Persistence;
 
-public class SetRepository
+internal class SetRepository
 {
     
 }

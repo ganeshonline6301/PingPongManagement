@@ -1,6 +1,7 @@
 ﻿using ErrorOr;
 using PingPongManagement.Domain.Common;
 using PingPongManagement.Domain.Matches;
+using PingPongManagement.Domain.Tournaments.Enums;
 using Throw;
 
 namespace PingPongManagement.Domain.Tournaments;
@@ -15,16 +16,19 @@ public class Tournament : Entity
     public TournamentFormat Format { get; private set; }
     public TournamentStatus Status { get; private set; }
     public string Description { get; private set; }
+    public DateTime StartDate { get; private set; }
     public Guid AdminId { get; private set; }
     
     public IReadOnlyCollection<Guid> Matches => _matchIds.AsReadOnly();
 
-    public Tournament(string title, string description, TournamentType type, TournamentStatus status, Guid adminId, Guid? id = null) : base(id ?? Guid.NewGuid())
+    public Tournament(string title, string description, TournamentType type, TournamentStatus status, TournamentFormat format, DateTime startDate, Guid adminId, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Type = type;
         Status = status;
+        Format = format;
         Title = title;
         Description = description;
+        StartDate = startDate;
         AdminId = Guid.NewGuid();
     }
 

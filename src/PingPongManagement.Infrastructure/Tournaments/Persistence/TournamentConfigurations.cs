@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PingPongManagement.Domain.Tournaments;
+using PingPongManagement.Domain.Tournaments.Enums;
 
 namespace PingPongManagement.Infrastructure.Tournaments.Persistence;
 

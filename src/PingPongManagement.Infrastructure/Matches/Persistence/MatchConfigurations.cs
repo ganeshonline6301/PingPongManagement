@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PingPongManagement.Domain.Matches;
+using PingPongManagement.Domain.Matches.Enums;
 
 namespace PingPongManagement.Infrastructure.Matches.Persistence;
 
