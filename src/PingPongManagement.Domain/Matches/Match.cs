@@ -7,7 +7,6 @@ public class Match
 {
     public Guid Id { get; private set; }
     public string Name { get; private set; }
-    public MatchType MatchType { get; private set; }
     public MatchStatus Status { get; private set; }
     public Guid TournamentId { get; private set; }
     public Guid? WinnerId { get; private set; }
@@ -15,11 +14,10 @@ public class Match
     private readonly List<Set> _sets = new List<Set>();
     public IReadOnlyCollection<Set> Sets => _sets.AsReadOnly();
     
-    public Match(Guid id, string name, MatchType matchType, Guid tournamentId)
+    public Match(Guid id, string name, Guid tournamentId)
     {
         Id = id;
         Name = name;
-        MatchType = matchType;
         TournamentId = tournamentId;
         Status = MatchStatus.NotStarted; // Default status when created
     }

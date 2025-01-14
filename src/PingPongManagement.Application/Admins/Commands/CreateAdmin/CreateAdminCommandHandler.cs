@@ -15,6 +15,7 @@ public class CreateAdminCommandHandler : IRequestHandler<CreateAdminCommand, Err
     }
     public async Task<ErrorOr<Admin>> Handle(CreateAdminCommand command, CancellationToken cancellationToken)
     {
+        
         var admin = new Admin(
             firstName: command.firstName,
             lastName: command.lastName,
