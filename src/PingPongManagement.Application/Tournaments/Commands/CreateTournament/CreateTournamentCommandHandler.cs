@@ -30,6 +30,7 @@ public class CreateTournamentCommandHandler : IRequestHandler<CreateTournamentCo
             type: request.TournamentType,
             status: request.TournamentStatus,
             format: request.TournamentFormat,
+            size: request.TournamentSize,
             startDate: request.StartDate,
             adminId: admin.Id,
             id: Guid.NewGuid()

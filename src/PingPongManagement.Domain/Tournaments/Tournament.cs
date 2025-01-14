@@ -10,10 +10,10 @@ public class Tournament : Entity
 {
     private readonly List<Guid> _matchIds = new();
     private readonly int _maxMatches;
-    public Guid Id { get; private set; }
     public string Title { get; private set; }
     public TournamentType Type { get; private set; }
     public TournamentFormat Format { get; private set; }
+    public TournamentSize Size { get; private set; }
     public TournamentStatus Status { get; private set; }
     public string Description { get; private set; }
     public DateTime StartDate { get; private set; }
@@ -21,12 +21,13 @@ public class Tournament : Entity
     
     public IReadOnlyCollection<Guid> Matches => _matchIds.AsReadOnly();
 
-    public Tournament(string title, string description, TournamentType type, TournamentStatus status, TournamentFormat format, DateTime startDate, Guid adminId, Guid? id = null) : base(id ?? Guid.NewGuid())
+    public Tournament(string title, string description, TournamentType type, TournamentStatus status, TournamentFormat format, TournamentSize size, DateTime startDate, Guid adminId, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Type = type;
         Status = status;
         Format = format;
         Title = title;
+        Size = size;
         Description = description;
         StartDate = startDate;
         AdminId = Guid.NewGuid();
