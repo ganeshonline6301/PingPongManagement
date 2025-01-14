@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace PingPongManagement.Domain.Tournaments;
+namespace PingPongManagement.Domain.Tournaments.Enums;
 
 public class TournamentFormat : SmartEnum<TournamentFormat>
 {

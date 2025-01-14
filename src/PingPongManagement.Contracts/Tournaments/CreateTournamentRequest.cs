@@ -1,3 +1,5 @@
-﻿namespace PingPongManagement.Contracts.Tournaments;
+﻿using PingPongManagement.Contracts.Tournaments.Enums;
 
-public record CreateTournamentRequest(string Title, string Description, DateTime StartDate, DateTime EndDate);
+namespace PingPongManagement.Contracts.Tournaments;
+
+public record CreateTournamentRequest(string Title, string Description, DateTime StartDate, TournamentType TournamentType, TournamentStatus TournamentStatus, TournamentFormat TournamentFormat, TournamentSize TournamentSize);

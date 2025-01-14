@@ -1,4 +1,4 @@
-﻿namespace PingPongManagement.Contracts.Tournaments;
+﻿namespace PingPongManagement.Contracts.Tournaments.Enums;
 
 public enum TournamentStatus
 {

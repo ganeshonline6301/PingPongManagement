@@ -3,7 +3,7 @@ using PingPongManagement.Domain.Matches;
 
 namespace PingPongManagement.Infrastructure.Matches.Persistence;
 
-public class MatchRepository : IMatchRepository
+internal class MatchRepository : IMatchRepository
 {
     public Task<IEnumerable<Match>> GetAllAsync(CancellationToken cancellationToken)
     {

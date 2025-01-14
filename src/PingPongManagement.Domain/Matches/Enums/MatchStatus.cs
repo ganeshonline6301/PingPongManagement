@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace PingPongManagement.Domain.Matches;
+namespace PingPongManagement.Domain.Matches.Enums;
 
 public class MatchStatus : SmartEnum<MatchStatus>
 {
