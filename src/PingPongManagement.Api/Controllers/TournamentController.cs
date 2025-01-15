@@ -40,7 +40,9 @@ namespace PingPongManagement.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<TournamentResponse> CreateTournament(CreateTournamentRequest createTournamentRequest,
+        public async Task<TournamentResponse> CreateTournament(
+            CreateTournamentRequest createTournamentRequest,
+            Guid adminId,
             CancellationToken cancellationToken)
         {
             return new TournamentResponse(
