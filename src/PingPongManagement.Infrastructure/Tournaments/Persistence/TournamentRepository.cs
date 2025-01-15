@@ -4,14 +4,8 @@ using PingPongManagement.Infrastructure.Common;
 
 namespace PingPongManagement.Infrastructure.Tournaments.Persistence;
 
-internal class TournamentRepository : ITournamentRepository
+internal class TournamentRepository(PingPongManagementDbContext dbContext) : ITournamentRepository
 {
-    private readonly PingPongManagementDbContext _dbContext;
-
-    public TournamentRepository(PingPongManagementDbContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
     public Task<IEnumerable<Tournament>> GetAllAsync(CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
@@ -24,7 +18,7 @@ internal class TournamentRepository : ITournamentRepository
 
     public async Task AddAsync(Tournament tournament, CancellationToken cancellationToken)
     {
-        await _dbContext.Tournaments.AddAsync(tournament, cancellationToken);
+        await dbContext.Tournaments.AddAsync(tournament, cancellationToken);
     }
 
     public Task UpdateAsync(Tournament tournament, CancellationToken cancellationToken)
@@ -34,6 +28,8 @@ internal class TournamentRepository : ITournamentRepository
 
     public Task RemoveAsync(Guid id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var tournament = dbContext.Tournaments.Find(id);
+        dbContext.Tournaments.Remove(tournament);
+        return Task.CompletedTask;
     }
 }
